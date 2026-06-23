@@ -1,0 +1,13 @@
+{
+  "name": "db-connection-tester",
+  "version": "1.0.0",
+  "description": "Paste a database connection string and instantly check whether it connects",
+  "private": true,
+  "dependencies": {
+    "mongodb": "^6.10.0",
+    "mssql": "^12.5.5",
+    "mysql2": "^3.11.5",
+    "pg": "^8.13.1",
+    "redis": "^6.0.0"
+  }
+}

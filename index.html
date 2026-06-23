@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Database Connection Tester</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <div class="header">
+        <div class="logo">&#128190;</div>
+        <div>
+          <h1>Database Connection Tester</h1>
+        </div>
+      </div>
+      <p class="sub">Paste a database connection string and instantly check whether it connects.</p>
+
+      <div class="notice">
+        <span class="ico">&#128274;</span>
+        <span>
+          <b>Your connection string is never stored.</b> It is sent over a single encrypted request, used
+          once to test the connection, then discarded. Nothing is saved, logged, or cached.
+        </span>
+      </div>
+
+      <form id="form" autocomplete="off">
+        <label for="cs">Connection String</label>
+        <div class="key-row">
+          <input id="cs" type="password" placeholder="postgresql://user:password@host:5432/dbname" autocomplete="off" />
+          <button type="button" class="toggle" id="toggleCs">Show</button>
+        </div>
+        <div class="chips">
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">MySQL</span>
+          <span class="chip">MongoDB</span>
+          <span class="chip">SQL Server</span>
+          <span class="chip">Redis</span>
+        </div>
+        <p class="hint">
+          Works with Supabase, Neon, Railway, PlanetScale, MongoDB Atlas, Azure SQL, Upstash and more.
+          Starts with <code>postgres://</code>, <code>mysql://</code>, <code>mongodb://</code>,
+          <code>mssql://</code>, or <code>redis://</code>.
+        </p>
+
+        <button type="submit" class="send" id="btn">Test connection</button>
+      </form>
+
+      <div class="footer">
+        <p class="dev">Developed with &#10084;&#65039; by <a href="https://hutytechict.com/" target="_blank" rel="noopener noreferrer">Hutech ICT Resources</a></p>
+        <a class="coffee" href="https://flutterwave.com/donate/syfj4ekzfsjt" target="_blank" rel="noopener noreferrer">&#9749; Buy me a coffee</a>
+      </div>
+    </div>
+
+    <!-- Pop-up confirmation modal -->
+    <div class="overlay" id="overlay">
+      <div class="modal" id="modal">
+        <div class="badge" id="modalBadge"></div>
+        <h2 id="modalTitle"></h2>
+        <p id="modalText"></p>
+        <pre id="modalDetail" class="hidden"></pre>
+        <button id="modalClose">OK</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
